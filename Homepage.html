@@ -1,0 +1,172 @@
+<html>
+<head>
+    <title>Calabash Lifestyle</title>
+    <link href="Style.css" rel="stylesheet">
+    <style>
+       
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #FFF9E3;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #FFF9E3;
+            color: #f7c906;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+        .header img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .header h1 {
+            margin: 10px 0;
+        }
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        /* Countdown timer styles */
+        #countdown {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .circle {
+            background-color: #f7c906;
+            color: white;
+            border-radius: 50%;
+            width: 110px;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            margin: 0 10px;
+        }
+
+        /* Button container styles */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #f7c906;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .button-container a:hover {
+            background-color: #ca3434;
+        }
+
+        /* Email and social media styles */
+        #email-field {
+            margin-top: 20px;
+        }
+        input[type="email"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 300px;
+        }
+        #social-media {
+            margin-top: 20px;
+        }
+        #social-media img {
+            width: 40px;
+            margin: 0 10px;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #f7c906;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        #copyright {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="img/cropped-Calabash_logo.jpg" alt="Calabash Logo" width="200" height="200">
+        <h1>Welcome to Calabash Lifestyle</h1>
+        <h2>"Where Good Friends Meet"</h2>
+    </div>
+    <div class="button-container">
+        <a href="Contact Us.html" class="contact">Contact Us</a>
+        <a href="About Us.html" class="about">About Us</a>
+    </div>
+    <div id="countdown">
+        <div class="circle" id="days"></div>
+        <div class="circle" id="hours"></div>
+        <div class="circle" id="minutes"></div>
+        <div class="circle" id="seconds"></div>
+    </div>
+    <h3>97 Ntsima, Ga-Dikgale, Mankweng.</h3>
+    <div id="email-field">
+        <input type="email" placeholder="Enter email address">
+    </div>
+    <div id="social-media">
+        <a href="https://www.facebook.com/profile.php?id=61555978071879&mibextid=LQQJ4d" target="_blank"><img src="img/facebook.jfif" alt="Facebook"></a>
+        <a href="https://www.twitter.com" target="_blank"><img src="img/twitter.jfif" alt="Twitter"></a>
+        <a href="thecalabashlifestyle@gmail.com" target="_blank"><img src="img/mail.jfif" alt="Gmail"></a>
+        <a href="https://www.instagram.com/the_calabash_lifestyle?igsh=ODJtZmR3c3k2bmg0" target="_blank"><img src="img/instagram.jfif" alt="Instagram"></a>
+    </div>
+
+    <script>
+        var countDownDate = new Date("Nov 30, 2024 23:59:59").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days + "d";
+            document.getElementById("hours").innerHTML = hours + "h";
+            document.getElementById("minutes").innerHTML = minutes + "m";
+            document.getElementById("seconds").innerHTML = seconds + "s";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+    <div class="footer">
+        <h4>&copy; 2024 THE CALABASH LIFESTYLE. All rights reserved.</h4>
+    </div>
+    
+</body>
+</html>
